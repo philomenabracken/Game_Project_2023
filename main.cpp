@@ -1,5 +1,6 @@
 #include "raylib.h"
 
+//included raymath to fix vector 2 error 
 #include "raymath.h"
 
 int main() {
@@ -8,9 +9,10 @@ const int screenWidth = 800;
 
    InitWindow(screenWidth, screenHeight, "Fire Ball Game ");
 
-//adding texture for the background in layers/ cartoon effect 
+//adding texture for the background/ cartoon effect 
 
    Texture2D midground = LoadTexture ("Assets_Resources/platformer_background_1.png");
+
   
  
     float scrollingMid = 0.0f;
