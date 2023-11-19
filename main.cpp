@@ -3,14 +3,13 @@
 
 int main() {
 const int screenWidth = 800;
- const int screenHeight = 450;
+ const int screenHeight = 500;
 
    InitWindow(screenWidth, screenHeight, "Fire Ball Game ");
 
-  SetTargetFPS(80);
+  SetTargetFPS(60);
 
     while (!WindowShouldClose() /*WindowShouldClose returns true if esc is clicked and closes the window*/){
-
 
     }
   CloseWindow();
