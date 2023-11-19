@@ -4,14 +4,14 @@
 #include "raymath.h"
 
 int main() {
-const int screenWidth = 800;
- const int screenHeight = 500;
+const int screenWidth = 850;
+ const int screenHeight = 400;
 
-   InitWindow(screenWidth, screenHeight, "Fire Ball Game ");
+   InitWindow(screenWidth, screenHeight, "Doodle Abstract Game ");
 
 //adding texture for the background/ cartoon effect 
 
-   Texture2D midground = LoadTexture ("Assets_Resources/platformer_background_1.png");
+   Texture2D midground = LoadTexture ("Assets_Resources/Doodle_Game.png");
 
   
  
@@ -35,6 +35,7 @@ const int screenWidth = 800;
        
 
       //Draw 
+      
       BeginDrawing();
 
       ClearBackground (GetColor(0x052c46ff));
