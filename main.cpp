@@ -55,15 +55,16 @@ const int screenWidth = 850;
 
       //drawing the Paddle for the Right side/ colour Black. 
 
-      DrawRectangle(GetScreenWidth() -50 -10, GetScreenHeight() / 2 -50, 10, 100, BLACK);
-
+      DrawRectangle(GetScreenWidth() -50 -10, GetScreenHeight() / 2 -50, 10, 100, BLACK); 
       
+
+
     
       EndDrawing();
 
       }
 
-      //De-Initialization 
+      //De-Initialization  
     //  unload background texture 
       UnloadTexture(midground);
 
