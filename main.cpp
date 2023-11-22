@@ -16,6 +16,13 @@ const int screenWidth = 850;
   
  
     float scrollingMid = 0.0f;
+
+    float ballX; 
+    float ballY;
+    float ballRadius; 
+
+
+
     
     
 // setting game to run at 60 frames -per-second 
@@ -56,7 +63,7 @@ const int screenWidth = 850;
       //drawing the Paddle for the Right side/ colour Black. 
 
       DrawRectangle(GetScreenWidth() -50 -10, GetScreenHeight() / 2 -50, 10, 100, BLACK); 
-      
+
 
 
     
