@@ -36,13 +36,17 @@ const int screenWidth = 850;
 
       //Draw 
       
+      
       BeginDrawing();
 
-      ClearBackground (GetColor(0x052c46ff));
+     
+      //when the window is activated (press run) it should show a moving background on the screen. 
 
       DrawTextureEx(midground, (Vector2){ scrollingMid, 20 }, 0.0f, 2.0f, WHITE);
       DrawTextureEx(midground, (Vector2){ midground.width*2 + scrollingMid, 20 }, 0.0f, 2.0f, WHITE);
-
+    
+     // when drawing the ball, (which will be replaced by an asset later on) in the middle of the screen and colour black. 
+      DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 5, BLACK);
     
       EndDrawing();
 
@@ -54,6 +58,8 @@ const int screenWidth = 850;
 
     
   CloseWindow();
+  
+  return 0; 
   
 }
 
