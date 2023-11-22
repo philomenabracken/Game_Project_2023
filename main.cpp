@@ -39,7 +39,7 @@ const int screenWidth = 850;
       
       BeginDrawing();
 
-     
+     // using  layers to place code in the right place (back to front) 
       //when the window is activated (press run) it should show a moving background on the screen. 
 
       DrawTextureEx(midground, (Vector2){ scrollingMid, 20 }, 0.0f, 2.0f, WHITE);
@@ -47,6 +47,17 @@ const int screenWidth = 850;
     
      // when drawing the ball, (which will be replaced by an asset later on) in the middle of the screen and colour black. 
       DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 5, BLACK);
+  
+
+      //drawing the rectangle  , to act as the left side paddle  for our Game, (Which will be replaced by an asset later on) colour black. 
+
+      DrawRectangle(50, GetScreenHeight() / 2 -50, 10, 100, BLACK); 
+
+      //drawing the Paddle for the Right side/ colour Black. 
+
+      DrawRectangle(GetScreenWidth() -50 -10, GetScreenHeight() / 2 -50, 10, 100, BLACK);
+
+      
     
       EndDrawing();
 
