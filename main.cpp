@@ -14,16 +14,15 @@ const int screenWidth = 850;
    Texture2D midground = LoadTexture ("Assets_Resources/Doodle_Game.png");
 
   
- 
+ // Add int for moving of the ball on screen 
     float scrollingMid = 0.0f;
 
-    float ballX; 
-    float ballY;
-    float ballRadius; 
+    float ballX = GetScreenWidth() / 2.0f;
 
+    float ballY = GetScreenWidth() / 2.0f; 
 
-
-    
+    float ballRadius = 5; 
+  
     
 // setting game to run at 60 frames -per-second 
   SetTargetFPS(60);
@@ -33,6 +32,7 @@ const int screenWidth = 850;
     while (!WindowShouldClose() /*WindowShouldClose returns true if esc is clicked and closes the window*/)
     {
 
+     
       //update 
 
         
@@ -40,6 +40,11 @@ const int screenWidth = 850;
        
         if (scrollingMid <= -midground.width*2) scrollingMid = 0;
        
+
+      ballX += 1 * GetFrameTime();
+      ballY += 1 * GetFrameTime(); 
+
+
 
       //Draw 
       
@@ -53,7 +58,7 @@ const int screenWidth = 850;
       DrawTextureEx(midground, (Vector2){ midground.width*2 + scrollingMid, 20 }, 0.0f, 2.0f, WHITE);
     
      // when drawing the ball, (which will be replaced by an asset later on) in the middle of the screen and colour black. 
-      DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 5, BLACK);
+      DrawCircle((int) ballX, (int) ballY, ballRadius, WHITE);
   
 
       //drawing the rectangle  , to act as the left side paddle  for our Game, (Which will be replaced by an asset later on) colour black. 
