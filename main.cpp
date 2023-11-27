@@ -20,8 +20,17 @@
       }
 
 };
+//creating a struct for my paddles 
+struct Paddle 
+{
+
+float x, y;
+//only need 1 speed as its only gign to move in one direction for now. 
+float speed; 
+float width, height; 
 
 
+};
 
 int main() {
 const int screenWidth = 850;
