@@ -22,6 +22,10 @@ const int screenWidth = 850;
     float ballY = GetScreenWidth() / 2.0f; 
 
     float ballRadius = 5; 
+
+    float ballSpeedX = 200;
+
+    float ballSpeedY = 200; 
   
     
 // setting game to run at 60 frames -per-second 
@@ -41,8 +45,8 @@ const int screenWidth = 850;
         if (scrollingMid <= -midground.width*2) scrollingMid = 0;
        
 
-      ballX += 1 * GetFrameTime();
-      ballY += 1 * GetFrameTime(); 
+      ballX += ballSpeedX * GetFrameTime();
+      ballY += ballSpeedY * GetFrameTime(); 
 
 
 
