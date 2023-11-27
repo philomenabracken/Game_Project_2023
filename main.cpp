@@ -34,7 +34,7 @@ float width, height;
 
 void Draw()
 {
-
+   DrawRectangle(x - width/ 2, y-height /2 , 10, 100, BLACK); 
 }
 
 };
@@ -69,11 +69,39 @@ const int screenWidth = 850;
     ball. speedY = 200; 
 
     //creating left paddle, with its properties, that I created at the beginning. 
-    leftPaddle.x =50;
-    leftPaddle.y = GetScreenHeight() / 2 -50;
+
+    Paddle leftPaddle; 
+
+    leftPaddle.x = 50;
+
+    leftPaddle.y = GetScreenHeight() / 2;
+
     leftPaddle.width= 10; 
+
     leftPaddle. height = 100;
+
     leftPaddle.speed = 400; 
+
+    //creating right paddle, with its proerties, that I created at the beginning. 
+
+    Paddle rightPaddle; 
+
+    rightPaddle. x = GetScreenWidth() / 2 - 50; 
+
+    rightPaddle.y = GetScreenHeight() / 2;
+
+    rightPaddle.width = 10; 
+
+    rightPaddle. height = 100; 
+
+    rightPaddle.speed = 500; 
+
+
+
+
+
+
+
 
 
   
@@ -138,11 +166,12 @@ const int screenWidth = 850;
 
       //drawing the rectangle  , to act as the left side paddle  for our Game, (Which will be replaced by an asset later on) colour black. 
 
-      DrawRectangle(50, GetScreenHeight() / 2 -50, 10, 100, BLACK); 
+     leftPaddle.Draw();
 
       //drawing the Paddle for the Right side/ colour Black. 
 
-      DrawRectangle(GetScreenWidth() -50 -10, GetScreenHeight() / 2 -50, 10, 100, BLACK); 
+      rightPaddle.Draw();
+
 
 
 
