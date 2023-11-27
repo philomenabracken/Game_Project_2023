@@ -48,12 +48,22 @@ const int screenWidth = 850;
       ballX += ballSpeedX * GetFrameTime();
       ballY += ballSpeedY * GetFrameTime(); 
 
+// reverse speed of ball 
+       
+       if (ballY < 0 )
+     
+       {
+
+           ballY = 0;
+           ballSpeedY *= -1; 
 
 
+       }
 
+// Adding screenheight so the ball can not get stuck at the bottom of the screen. 
     if (ballY > GetScreenHeight()) 
     {
-// Adding screenheight so the ball can not get stuck at the bottom of the screen. 
+
          ballY =GetScreenHeight();
          ballSpeedY *= -1; 
     
