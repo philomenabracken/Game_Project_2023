@@ -50,6 +50,15 @@ const int screenWidth = 850;
 
 
 
+
+    if (ballY > GetScreenHeight()) 
+    {
+// Adding screenheight so the ball can not get stuck at the bottom of the screen. 
+         ballY =GetScreenHeight();
+         ballSpeedY *= -1; 
+    
+    }
+
       //Draw 
       
       
