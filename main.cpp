@@ -21,14 +21,21 @@
 
 };
 //creating a struct for my paddles 
-struct Paddle 
+struct Paddle  
 {
 
 float x, y;
 //only need 1 speed as its only gign to move in one direction for now. 
 float speed; 
+// width and height of paddles 
 float width, height; 
 
+//creating a draw function for the paddles 
+
+void Draw()
+{
+
+}
 
 };
 
@@ -60,6 +67,15 @@ const int screenWidth = 850;
     ball.speedX = 200;
 
     ball. speedY = 200; 
+
+    //creating left paddle, with its properties, that I created at the beginning. 
+    leftPaddle.x =50;
+    leftPaddle.y = GetScreenHeight() / 2 -50;
+    leftPaddle.width= 10; 
+    leftPaddle. height = 100;
+    leftPaddle.speed = 400; 
+
+
   
     
 // setting game to run at 60 frames -per-second 
