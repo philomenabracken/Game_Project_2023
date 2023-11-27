@@ -86,7 +86,7 @@ const int screenWidth = 850;
 
     Paddle rightPaddle; 
 
-    rightPaddle. x = GetScreenWidth() / 2 - 50; 
+    rightPaddle. x = GetScreenWidth() - 50; 
 
     rightPaddle.y = GetScreenHeight() / 2;
 
