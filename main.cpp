@@ -3,6 +3,26 @@
 //included raymath to fix vector 2 error 
 #include "raymath.h"
 
+
+//creating a struct to place my varuables into/ call all at once 
+
+ struct Ball 
+{
+    float x, y;
+    float speedX, speedY; 
+    float radius; 
+
+// creating a draw function inside the ball struct. 
+      void Draw()
+      {
+          DrawCircle((int) x, (int) y, radius, WHITE);
+      
+      }
+
+};
+
+
+
 int main() {
 const int screenWidth = 850;
  const int screenHeight = 400;
@@ -14,18 +34,23 @@ const int screenWidth = 850;
    Texture2D midground = LoadTexture ("Assets_Resources/Doodle_Game.png");
 
   
- // Add int for moving of the ball on screen 
+ // Add int for moving of the ball on screen   
+
     float scrollingMid = 0.0f;
 
-    float ballX = GetScreenWidth() / 2.0f;
+//creating a ball struct, to hold all of the properities of the ball 
+   
+    Ball ball;
 
-    float ballY = GetScreenWidth() / 2.0f; 
+    ball. x = GetScreenWidth() / 2.0f;
 
-    float ballRadius = 5; 
+    ball. y = GetScreenWidth() / 2.0f; 
 
-    float ballSpeedX = 200;
+    ball.radius = 5; 
 
-    float ballSpeedY = 200; 
+    ball.speedX = 200;
+
+    ball. speedY = 200; 
   
     
 // setting game to run at 60 frames -per-second 
@@ -43,29 +68,31 @@ const int screenWidth = 850;
         scrollingMid -= 0.5f;
        
         if (scrollingMid <= -midground.width*2) scrollingMid = 0;
-       
+  
+  
+   // movement /speed   
 
-      ballX += ballSpeedX * GetFrameTime();
-      ballY += ballSpeedY * GetFrameTime(); 
+      ball. x += ball.speedX * GetFrameTime();
+      ball. y += ball. speedY * GetFrameTime(); 
 
 // reverse speed of ball 
        
-       if (ballY < 0 )
+       if (ball. y < 0 )
      
        {
 
-           ballY = 0;
-           ballSpeedY *= -1; 
+           ball. y = 0;
+           ball. speedY*= -1; 
 
 
        }
 
 // Adding screenheight so the ball can not get stuck at the bottom of the screen. 
-    if (ballY > GetScreenHeight()) 
+    if (ball. y > GetScreenHeight()) 
     {
 
-         ballY =GetScreenHeight();
-         ballSpeedY *= -1; 
+         ball. y =GetScreenHeight(); 
+         ball. speedY *= -1; 
     
     }
 
@@ -80,8 +107,8 @@ const int screenWidth = 850;
       DrawTextureEx(midground, (Vector2){ scrollingMid, 20 }, 0.0f, 2.0f, WHITE);
       DrawTextureEx(midground, (Vector2){ midground.width*2 + scrollingMid, 20 }, 0.0f, 2.0f, WHITE);
     
-     // when drawing the ball, (which will be replaced by an asset later on) in the middle of the screen and colour black. 
-      DrawCircle((int) ballX, (int) ballY, ballRadius, WHITE);
+     // when drawing the ball, will now draw form the ball struct. 
+     ball.Draw();
   
 
       //drawing the rectangle  , to act as the left side paddle  for our Game, (Which will be replaced by an asset later on) colour black. 
