@@ -30,11 +30,18 @@ float speed;
 // width and height of paddles 
 float width, height; 
 
+  Rectangle GetRect()
+{
+  return Rectangle{ x - width/ 2, y-height /2 , 10, 100};
+
+  
+}
+
 //creating a draw function for the paddles 
 
 void Draw()
 {
-   DrawRectangle(x - width/ 2, y-height /2 , 10, 100, BLACK); 
+   DrawRectangleRec(GetRect(), BLACK); 
 }
 
 };
@@ -95,15 +102,6 @@ const int screenWidth = 850;
     rightPaddle. height = 100; 
 
     rightPaddle.speed = 500; 
-
-
-
-
-
-
-
-
-
   
     
 // setting game to run at 60 frames -per-second 
@@ -152,22 +150,21 @@ const int screenWidth = 850;
     // if key is pressed on key board the paddle with move up and down 
     }
 
-    if (IsKeyDown(KEY_A))
+    if (IsKeyDown(KEY_A))  
     {
       leftPaddle.y -= leftPaddle.speed * GetFrameTime (); 
     
     } 
 
-    if  (IsKeyDown(KEY_Z))
+    if (IsKeyDown(KEY_X))
     {
     leftPaddle.y += leftPaddle. speed * GetFrameTime();
 
     }
       
-
      // if key is pressed on key board the paddle with move up and down 
 
-      if(IsKeyDown(KEY_UP))
+      if(IsKeyDown(KEY_P))
       
        {
        
@@ -176,7 +173,7 @@ const int screenWidth = 850;
 
       }
 
-      if (IsKeyDown(KEY_DOWN))
+      if (IsKeyDown(KEY_M))
        {
 
         rightPaddle.y += rightPaddle.speed * GetFrameTime();
@@ -184,7 +181,16 @@ const int screenWidth = 850;
 
       }
 
+      //if ball collision ito the paddle it will come back 
 
+     if (CheckCollisionCircleRec (Vector2{ball.x, ball.y}, ball .radius, rightPaddle.GetRect()))
+
+     // To bounce the ball/ Adding the ball speed. 
+
+     {
+       ball.speedX *= -1; 
+
+     }
 
       //Draw 
       
