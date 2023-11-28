@@ -186,13 +186,14 @@ const int screenWidth = 850;
      if (CheckCollisionCircleRec (Vector2{ball.x, ball.y}, ball .radius, rightPaddle.GetRect()))
 
      // To bounce the ball/ Adding the ball speed. 
+     // making the ball speed up each frame 
     {
 
      
      if(ball.speedX > 0 )
      
       {
-       ball.speedX *= -1; 
+       ball.speedX *= -1.2f; 
 
      }
 
@@ -204,12 +205,13 @@ const int screenWidth = 850;
      if (CheckCollisionCircleRec (Vector2{ball.x, ball.y}, ball .radius, leftPaddle.GetRect()))
 
      // To bounce the ball/ Adding the ball speed. 
+
     {
 
        if(ball.speedX < 0)
 
       {
-       ball.speedX *= -1; 
+       ball.speedX *= -1.2f; 
 
       }
 
