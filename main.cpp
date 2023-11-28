@@ -147,7 +147,27 @@ const int screenWidth = 850;
          ball. y =GetScreenHeight(); 
          ball. speedY *= -1; 
     
+
+   
+    // if key is pressed on key board the paddle with move up and down 
     }
+
+    if (IsKeyDown(KEY_W))
+    {
+      leftPaddle.y += leftPaddlespeed * GetFrameTime (); 
+    
+    }
+
+    if  (IsKeyDown(KEY_S))
+    {
+    leftPaddle.y += leftPaddle. speed * GetFrameTime();
+
+    }
+      
+
+
+
+
 
       //Draw 
       
