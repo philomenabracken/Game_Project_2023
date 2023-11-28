@@ -194,12 +194,14 @@ const int screenWidth = 850;
      
       {
        ball.speedX *= -1.2f; 
+       ball.speedY = (ball.y - rightPaddle.y) / (rightPaddle.height /2 ) * 300; 
+      
 
      }
 
     }
      
-      
+  
       // if collision with left paddle it will bounce off 
 
      if (CheckCollisionCircleRec (Vector2{ball.x, ball.y}, ball .radius, leftPaddle.GetRect()))
@@ -212,6 +214,7 @@ const int screenWidth = 850;
 
       {
        ball.speedX *= -1.2f; 
+        ball.speedY = (ball.y - leftPaddle.y) / (leftPaddle. height/2 )* 300 ; 
 
       }
 
