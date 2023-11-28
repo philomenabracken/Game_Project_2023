@@ -186,22 +186,36 @@ const int screenWidth = 850;
      if (CheckCollisionCircleRec (Vector2{ball.x, ball.y}, ball .radius, rightPaddle.GetRect()))
 
      // To bounce the ball/ Adding the ball speed. 
+    {
 
-     {
+     
+     if(ball.speedX > 0 )
+     
+      {
        ball.speedX *= -1; 
 
      }
+
+    }
+     
       
       // if collision with left paddle it will bounce off 
 
      if (CheckCollisionCircleRec (Vector2{ball.x, ball.y}, ball .radius, leftPaddle.GetRect()))
 
      // To bounce the ball/ Adding the ball speed. 
+    {
 
-     {
+       if(ball.speedX < 0)
+
+      {
        ball.speedX *= -1; 
 
-     }
+      }
+
+
+    }
+     
 
 
       //Draw 
