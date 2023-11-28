@@ -71,7 +71,7 @@ const int screenWidth = 850;
 
     ball.radius = 5; 
 
-    ball.speedX = 200;
+    ball.speedX = 300;
 
     ball. speedY = 200; 
 
@@ -181,7 +181,7 @@ const int screenWidth = 850;
 
       }
 
-      //if ball collision ito the paddle it will come back 
+      //if ball collision ito the right paddle it will bounce off  
 
      if (CheckCollisionCircleRec (Vector2{ball.x, ball.y}, ball .radius, rightPaddle.GetRect()))
 
@@ -191,6 +191,18 @@ const int screenWidth = 850;
        ball.speedX *= -1; 
 
      }
+      
+      // if collision with left paddle it will bounce off 
+
+     if (CheckCollisionCircleRec (Vector2{ball.x, ball.y}, ball .radius, leftPaddle.GetRect()))
+
+     // To bounce the ball/ Adding the ball speed. 
+
+     {
+       ball.speedX *= -1; 
+
+     }
+
 
       //Draw 
       
