@@ -152,20 +152,37 @@ const int screenWidth = 850;
     // if key is pressed on key board the paddle with move up and down 
     }
 
-    if (IsKeyDown(KEY_W))
+    if (IsKeyDown(KEY_A))
     {
-      leftPaddle.y += leftPaddlespeed * GetFrameTime (); 
+      leftPaddle.y -= leftPaddle.speed * GetFrameTime (); 
     
-    }
+    } 
 
-    if  (IsKeyDown(KEY_S))
+    if  (IsKeyDown(KEY_Z))
     {
     leftPaddle.y += leftPaddle. speed * GetFrameTime();
 
     }
       
 
+     // if key is pressed on key board the paddle with move up and down 
 
+      if(IsKeyDown(KEY_UP))
+      
+       {
+       
+       rightPaddle.y -= rightPaddle. speed * GetFrameTime();
+
+
+      }
+
+      if (IsKeyDown(KEY_DOWN))
+       {
+
+        rightPaddle.y += rightPaddle.speed * GetFrameTime();
+
+
+      }
 
 
 
