@@ -4,6 +4,9 @@
 #include "raymath.h"
 
 
+
+
+
 //creating a struct to place my varuables into/ call all at once 
 
  struct Ball 
@@ -106,6 +109,11 @@ const int screenWidth = 850;
     //creating A TEXT for message to appear when ball goes out. for the winner 
 
     const char* winnerText = nullptr;
+
+  // creating a Timer for Game 
+
+  
+  
 
 
   
