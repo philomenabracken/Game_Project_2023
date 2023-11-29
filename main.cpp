@@ -102,6 +102,12 @@ const int screenWidth = 850;
     rightPaddle. height = 100; 
 
     rightPaddle.speed = 500; 
+
+    //creating A TEXT for message to appear when ball goes out. for the winner 
+
+    const char* winnerText = nullptr;
+
+
   
     
 // setting game to run at 60 frames -per-second 
@@ -217,7 +223,24 @@ const int screenWidth = 850;
         ball.speedY = (ball.y - leftPaddle.y) / (leftPaddle. height/2 )* ball.speedX ; 
 
       }
+      
+      {
+      // if ball goes off the left side, right is the winner 
 
+      if (ball.x < 0)
+      {
+
+        winnerText ="Right Player Wins!";
+
+      }
+      if (ball.x > GetScreenWidth()) 
+      {
+        
+        winnerText = "Left Player Wins!";
+
+      }
+      }
+         
 
     }
      
@@ -247,7 +270,16 @@ const int screenWidth = 850;
       rightPaddle.Draw();
 
 
+      //draw function for winner text 
 
+      if (winnerText)
+    
+        
+       // will draw text onto centre of screen 
+      {
+        int textWidth = MeasureText (winnerText, 60 );
+        DrawText (winnerText, GetScreenWidth () / 2 - textWidth / 2, GetScreenHeight() / 2 - 30, 60, PINK );
+      }
 
     
       EndDrawing();
