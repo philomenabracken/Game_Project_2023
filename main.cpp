@@ -4,9 +4,6 @@
 #include "raymath.h"
 
 
-
-
-
 //creating a struct to place my varuables into/ call all at once 
 
  struct Ball 
@@ -28,7 +25,7 @@ struct Paddle
 {
 
 float x, y;
-//only need 1 speed as its only gign to move in one direction for now. 
+//only need 1 speed as its only going to move in one direction for now. 
 float speed; 
 // width and height of paddles 
 float width, height; 
@@ -51,13 +48,19 @@ void Draw()
 
 int main() {
 const int screenWidth = 850;
- const int screenHeight = 400;
+ const int screenHeight = 400;  
 
    InitWindow(screenWidth, screenHeight, "Doodle Abstract Game ");
 
 //adding texture for the background/ cartoon effect 
 
    Texture2D midground = LoadTexture ("Assets_Resources/Doodle_Game.png");
+
+   //Add Audio to game // learned in Class 
+
+   InitAudioDevice();
+
+   Sound sound = LoadSound ("SoundEffects/ballsoundmp3"); 
 
   
  // Add int for moving of the ball on screen   
@@ -112,7 +115,7 @@ const int screenWidth = 850;
 
   // creating a Timer for Game 
 
-  
+
   
 
 
@@ -258,8 +261,13 @@ const int screenWidth = 850;
          ball.speedY = 300; 
          winnerText = nullptr;  
       }
+         
+         if (IsKeyPressed(KEY_A))
+         
+         {
+              PlaySound(sound);
 
-
+         }
       }
          
 
@@ -310,8 +318,9 @@ const int screenWidth = 850;
       //De-Initialization  
     //  unload background texture 
       UnloadTexture(midground);
+      UnloadSound(sound);
 
-    
+    CloseAudioDevice ();
   CloseWindow();
   
   return 0; 
