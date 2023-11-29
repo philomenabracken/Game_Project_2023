@@ -194,7 +194,7 @@ const int screenWidth = 850;
      
       {
        ball.speedX *= -1.2f; 
-       ball.speedY = (ball.y - rightPaddle.y) / (rightPaddle.height /2 ) * ball.speedX; 
+       ball.speedY = (ball.y - rightPaddle.y) / (rightPaddle.height /2 ) * - ball.speedX; 
       
 
      }
