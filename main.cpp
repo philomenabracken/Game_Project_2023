@@ -239,6 +239,19 @@ const int screenWidth = 850;
         winnerText = "Left Player Wins!";
 
       }
+       // when game is finish can be reset by pressing space bar key 
+      if (winnerText && IsKeyPressed (KEY_SPACE))
+   
+       {
+
+         ball.y = GetScreenWidth() / 2;  
+         ball.y = GetScreenHeight() / 2; 
+         ball.speedX = 300;
+         ball.speedY = 300; 
+         winnerText = nullptr;  
+      }
+
+
       }
          
 
