@@ -272,7 +272,7 @@ const int screenWidth = 850;
          }
 
 
-        if (ISkeypressed(KEY_P))
+        if (IsKeyPressed(KEY_P))
 
         {
 
@@ -285,14 +285,14 @@ const int screenWidth = 850;
          if (ball.x < 0)
       {
 
-        Playsound = (winner);
+        PlaySound  (winner);
 
       }
 
          if (ball.x > GetScreenWidth()) 
       {
         
-        Playsound = (winner);
+        PlaySound  (winner);
 
       }
 
