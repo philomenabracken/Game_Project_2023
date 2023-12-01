@@ -62,6 +62,8 @@ const int screenWidth = 850;
 
    Sound sound = LoadSound ("SoundEffects/ballsoundmp3"); 
 
+   Sound winner = LoadSound ("SoundEffects/crowd .mp3 ");
+
   
  // Add int for moving of the ball on screen   
 
@@ -268,7 +270,35 @@ const int screenWidth = 850;
               PlaySound(sound);
 
          }
+
+
+        if (ISkeypressed(KEY_P))
+
+        {
+
+          PlaySound(sound); 
+
+        }
+
+         // if ball goes off the left side, play sound  
+
+         if (ball.x < 0)
+      {
+
+        Playsound = (winner);
+
       }
+
+         if (ball.x > GetScreenWidth()) 
+      {
+        
+        Playsound = (winner);
+
+      }
+
+
+
+      }       
          
 
     }
@@ -319,6 +349,7 @@ const int screenWidth = 850;
     //  unload background texture 
       UnloadTexture(midground);
       UnloadSound(sound);
+      UnloadSound(winner);
 
     CloseAudioDevice ();
   CloseWindow();
