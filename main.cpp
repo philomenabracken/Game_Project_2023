@@ -111,17 +111,21 @@ const int screenWidth = 850;
 
     rightPaddle.speed = 500; 
 
+ //creating the font I want for my message to appear on screen
+ //learned from class leacture 3. 
+
+ Font customFont =Loadfont ("Fonts/BarbieFont.otf")
+
     //creating A TEXT for message to appear when ball goes out. for the winner 
 
     const char* winnerText = nullptr;
 
+
+
   // creating a Timer for Game 
 
 
- //creating the font I want for my message to appear on screen
- //learned from class leacture 3. 
-
- Font customFont =Loadfont ("Fonts/BarbieFont.otf") 
+ /
 
 
   
@@ -341,7 +345,9 @@ const int screenWidth = 850;
       {
         int textWidth = MeasureText (winnerText, 60 );
         DrawText (winnerText, GetScreenWidth () / 2 - textWidth / 2, GetScreenHeight() / 2 - 30, 60, PINK );
-      }
+
+        DrawTextEx (customFont, "Custom Font Text",) {screenWidth / 2, 20 }, customFont.baseSize, 2 , PINK ); 
+      } 
 
     
       EndDrawing();
@@ -353,6 +359,7 @@ const int screenWidth = 850;
       UnloadTexture(midground);
       UnloadSound(sound);
       UnloadSound(winner);
+      UnloadFont (customFont); 
 
     CloseAudioDevice ();
   CloseWindow();
