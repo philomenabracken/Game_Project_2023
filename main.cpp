@@ -118,7 +118,10 @@ const int screenWidth = 850;
   // creating a Timer for Game 
 
 
-  
+ //creating the font I want for my message to appear on screen
+ //learned from class leacture 3. 
+
+ Font customFont =Loadfont ("Fonts/BarbieFont.otf") 
 
 
   
