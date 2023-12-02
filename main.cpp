@@ -47,14 +47,16 @@ void Draw()
 };
 
 int main() {
-const int screenWidth = 850;
+const int screenWidth = 600;
  const int screenHeight = 400;  
 
    InitWindow(screenWidth, screenHeight, "Pink ping Pong  ");
 
 //adding texture for the background/ cartoon effect 
 
-   Texture2D midground = LoadTexture ("Assets_Resources/New Background.png");
+   Texture2D background = LoadTexture ("Assets_Resources/Background.png");
+
+   Texture2D background2 =LoadTextyre ("Assets_Resources/level one.png"):
 
    //Add Audio to game // learned in Class 
 
@@ -129,13 +131,14 @@ const int screenWidth = 850;
     {
 
      
-      //update 
+      //update Draw background //from class lecture 
 
         
-        scrollingMid -= 0.5f;
-       
-        if (scrollingMid <= -midground.width*2) scrollingMid = 0;
-  
+      BeginDrawing();
+
+       ClearBackground (RAYWHITE);
+
+    
   
    // movement /speed   
 
@@ -310,8 +313,8 @@ const int screenWidth = 850;
      // using  layers to place code in the right place (back to front) 
       //when the window is activated (press run) it should show a moving background on the screen. 
 
-      DrawTextureEx(midground, (Vector2){ scrollingMid, 20 }, 0.0f, 2.0f, WHITE);
-      DrawTextureEx(midground, (Vector2){ midground.width*2 + scrollingMid, 20 }, 0.0f, 2.0f, WHITE);
+      DrawTexture(background, 0,0,  WHITE);
+      
     
      // when drawing the ball, will now draw form the ball struct. 
      ball.Draw();
@@ -344,7 +347,7 @@ const int screenWidth = 850;
 
       //De-Initialization  
     //  unload background texture 
-      UnloadTexture(midground);
+      UnloadTexture(background);
       UnloadSound(sound);
       UnloadSound(winner);
 
