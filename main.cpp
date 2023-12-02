@@ -15,7 +15,7 @@
 // creating a draw function inside the ball struct. 
       void Draw()
       {
-          DrawCircle((int) x, (int) y, radius, WHITE);
+          DrawCircle((int) x, (int) y, radius, PINK);
       
       }
 
@@ -41,7 +41,7 @@ float width, height;
 
 void Draw()
 {
-   DrawRectangleRec(GetRect(), BLACK); 
+   DrawRectangleRec(GetRect(), PINK); 
 }
 
 };
@@ -50,11 +50,11 @@ int main() {
 const int screenWidth = 850;
  const int screenHeight = 400;  
 
-   InitWindow(screenWidth, screenHeight, "Doodle Abstract Game ");
+   InitWindow(screenWidth, screenHeight, "Pink ping Pong  ");
 
 //adding texture for the background/ cartoon effect 
 
-   Texture2D midground = LoadTexture ("Assets_Resources/Doodle_Game.png");
+   Texture2D midground = LoadTexture ("Assets_Resources/New Background.png");
 
    //Add Audio to game // learned in Class 
 
@@ -111,21 +111,11 @@ const int screenWidth = 850;
 
     rightPaddle.speed = 500; 
 
- //creating the font I want for my message to appear on screen
- //learned from class leacture 3. 
-
- Font customFont =Loadfont ("Fonts/BarbieFont.otf")
-
-    //creating A TEXT for message to appear when ball goes out. for the winner 
+    //creating A TEXT for message to appear when ball goes out. for the winner .. From class lecturere 3, time: 50:14
 
     const char* winnerText = nullptr;
 
-
-
   // creating a Timer for Game 
-
-
- /
 
 
   
@@ -345,9 +335,7 @@ const int screenWidth = 850;
       {
         int textWidth = MeasureText (winnerText, 60 );
         DrawText (winnerText, GetScreenWidth () / 2 - textWidth / 2, GetScreenHeight() / 2 - 30, 60, PINK );
-
-        DrawTextEx (customFont, "Custom Font Text",) {screenWidth / 2, 20 }, customFont.baseSize, 2 , PINK ); 
-      } 
+      }
 
     
       EndDrawing();
@@ -359,7 +347,6 @@ const int screenWidth = 850;
       UnloadTexture(midground);
       UnloadSound(sound);
       UnloadSound(winner);
-      UnloadFont (customFont); 
 
     CloseAudioDevice ();
   CloseWindow();
