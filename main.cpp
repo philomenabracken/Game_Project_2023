@@ -52,9 +52,13 @@ const int screenWidth = 600;
 
    InitWindow(screenWidth, screenHeight, "Pink ping Pong  ");
 
-//adding texture for the background/ cartoon effect 
+//adding texture for the background/ cartoon effect /class lexcture/ lecture three adding textures. 
 
-   Texture2D background = LoadTexture ("Assets_Resources/Background.png");
+   Texture2D background1 = LoadTexture ("Assets_Resources/level one.png");
+
+   Texture2D background2 = LoadTexture ("Assets_Resources/level two.png");
+
+   Texture2D background3 = LoadTexture ("Assets_Resources/ level three.png");
 
    //Add Audio to game // learned in Class 
 
