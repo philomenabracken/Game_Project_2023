@@ -384,10 +384,10 @@ const int screenWidth = 600;
 
       //De-Initialization  
     //  unload background texture 
-
-      UnloadTexture(background1);
-      UnloadTexture (background2);
-      UnloadTexture(background3);
+     
+     UnloadTexture(background1);
+     UnloadTexture(background2);
+     UnloadTexture(background3);
 
 
 // unloadsound
@@ -395,12 +395,18 @@ const int screenWidth = 600;
       UnloadSound(sound);
       UnloadSound(winner);
 
-    CloseAudioDevice ();
+    
+
+    CloseAudioDevice():
+
+  
   CloseWindow();
   
   return 0; 
  
-  {
+  
+
+  
 
     
   }
