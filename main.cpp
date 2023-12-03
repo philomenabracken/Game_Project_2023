@@ -52,7 +52,7 @@ const int screenWidth = 600;
  const int fps= 60;
  const int backgroundChangeTime = 10* fps =60;
 
- 
+
 
    InitWindow(screenWidth, screenHeight, "Pink ping Pong  ");
 
@@ -63,6 +63,11 @@ const int screenWidth = 600;
    Texture2D background2 = LoadTexture ("Assets_Resources/level two.png");
 
    Texture2D background3 = LoadTexture ("Assets_Resources/ level three.png");
+
+
+// adding in frame count for background that will be displayed and number of frames that have passed for game backgrounds 
+   int frameCount = 0;
+   int currentBackground =1; 
 
    //Add Audio to game // learned in Class 
 
