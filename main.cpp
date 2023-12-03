@@ -49,6 +49,10 @@ void Draw()
 int main() {
 const int screenWidth = 600;
  const int screenHeight = 400;  
+ const int fps= 60;
+ const int backgroundChangeTime = 10* fps =60;
+
+ 
 
    InitWindow(screenWidth, screenHeight, "Pink ping Pong  ");
 
@@ -315,7 +319,7 @@ const int screenWidth = 600;
      // using  layers to place code in the right place (back to front) 
       //when the window is activated (press run) it should show a moving background on the screen. 
 
-      DrawTexture(background, 0,0,  WHITE);
+      DrawTexture(background1, 0,0,  WHITE);
       
     
      // when drawing the ball, will now draw form the ball struct. 
@@ -349,7 +353,7 @@ const int screenWidth = 600;
 
       //De-Initialization  
     //  unload background texture 
-      UnloadTexture(background);
+      UnloadTexture(background1);
       UnloadSound(sound);
       UnloadSound(winner);
 
