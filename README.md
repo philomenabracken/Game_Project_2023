@@ -63,6 +63,17 @@ https://youtu.be/vGlvTWUctTQ?si=JSdSX54JS0SbCEea
 https://youtu.be/si8QwfZ2s_c?si=9R0UMPqhU6SHide2
 
 
+Audio used in Game: 
+
+https://freesound.org/search/?q=tennis+ball+ (tennis ball audio) 
+
+Background textures : 
+
+https://free-game-assets.itch.io/cartoon-vertical-game-2d-backgrounds (backgrounds )
+
+
+
+
 
 
 
