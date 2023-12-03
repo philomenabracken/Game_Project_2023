@@ -80,7 +80,7 @@ const int screenWidth = 600;
   
  // Add int for moving of the ball on screen   
 
-    float scrollingMid = 0.0f;
+
 
 //creating a ball struct, to hold all of the properities of the ball //
    
