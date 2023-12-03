@@ -52,7 +52,7 @@ const int screenWidth = 600;
  const int fps= 60;
  const int backgroundChangeTime = 10* fps; 
 
-
+//Lecture one: Set up and screen height and width, time 22:32 - 37:38 
 
    InitWindow(screenWidth, screenHeight, "Pink ping Pong  ");
 
@@ -69,7 +69,7 @@ const int screenWidth = 600;
    int frameCount = 0;
    int currentBackground =1; 
 
-   //Add Audio to game // learned in Class 
+   //Add Audio to game // learned in Class //Lexture three: Loading sound in a game time 1:12:17 - 1:17:35
 
    InitAudioDevice();
 
@@ -80,9 +80,9 @@ const int screenWidth = 600;
   
  // Add int for moving of the ball on screen   
 
-   
+    float scrollingMid = 0.0f;
 
-//creating a ball struct, to hold all of the properities of the ball 
+//creating a ball struct, to hold all of the properities of the ball //
    
     Ball ball;
 
@@ -335,7 +335,7 @@ const int screenWidth = 600;
 
 
 
-          
+            
          
 
     }
@@ -395,17 +395,12 @@ const int screenWidth = 600;
       UnloadSound(sound);
       UnloadSound(winner);
 
-    
-
-    CloseAudioDevice();
-
-  
+    CloseAudioDevice ();
   CloseWindow();
   
   return 0; 
  
   {}
-
 
   
 
