@@ -52,26 +52,9 @@ const int screenWidth = 600;
 
    InitWindow(screenWidth, screenHeight, "Pink ping Pong  ");
 
-   //game time start of 30 seconds 
-   
-   double starTime = GetTime();
-   
-   // 30 seconds 
+//adding texture for the background/ cartoon effect 
 
-   double duration = 30.0; 
-
-   //background changes ever 10 seconds 
-
-   double backgroundChangeTime = 10.0; 
-  
-
-//adding texture for the background/ cartoon effect /for each leve 1,2,3 
-
-   Texture2D background1 = LoadTexture ("Assets_Resources/Background.png");
-
-   Texture2D background2 =LoadTexture ("Assets_Resources/level one.png"):
-
- 
+   Texture2D background = LoadTexture ("Assets_Resources/Background.png");
 
    //Add Audio to game // learned in Class 
 
@@ -148,16 +131,10 @@ const int screenWidth = 600;
      
       //update Draw background //from class lecture 
 
-      double currentTime = GetTime();
-      double elapsedTime= currentTime -startTime; 
+        
+      BeginDrawing();
 
-      if(elapsedTime >=10.0 &&! changebackground)
-
-      {
-        UnloadTexture ("background1");
-        background2 = LoadTexture ("background2.png");
-        changeBackground =true; 
-      }
+       ClearBackground (RAYWHITE);
 
     
   
@@ -334,17 +311,8 @@ const int screenWidth = 600;
      // using  layers to place code in the right place (back to front) 
       //when the window is activated (press run) it should show a moving background on the screen. 
 
-      ClearBackground(RAYWHITE);
+      DrawTexture(background, 0,0,  WHITE);
       
-      if (!changeBackground)
-      {
-        DrawTexture (background1,0,0, WHITE);
-      
-      }
-      else 
-      {
-        DrawTexture(background2,0,0, WHITE)
-      }
     
      // when drawing the ball, will now draw form the ball struct. 
      ball.Draw();
@@ -377,8 +345,7 @@ const int screenWidth = 600;
 
       //De-Initialization  
     //  unload background texture 
-      UnloadTexture(background1);
-      UnloadTexture(background2);
+      UnloadTexture(background);
       UnloadSound(sound);
       UnloadSound(winner);
 
