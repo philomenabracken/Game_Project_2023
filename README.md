@@ -1,5 +1,11 @@
 # Game_Project_ 2023
 Game Description:
+
+
+youtube video link: 
+
+
+
 Paddle Clash,based on the orginal concept of ping pong, two paddles and a ball, adding speed every few seconds. The game concept is to get to the end,progressing through each level as the ball speeds up. 
 The changing backgrounds indecates what level you are currently at. 
 Background one "Candycane Lane" Repecents level one 
