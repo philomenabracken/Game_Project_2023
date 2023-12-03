@@ -50,7 +50,7 @@ int main() {
 const int screenWidth = 600;
  const int screenHeight = 400;  
  const int fps= 60;
- const int backgroundChangeTime = 10* fps =60;
+ const int backgroundChangeTime = 10* fps; 
 
 
 
@@ -147,7 +147,33 @@ const int screenWidth = 600;
         
       BeginDrawing();
 
-       ClearBackground (RAYWHITE);
+       ClearBackground (RAYWHITE); 
+
+        // adding or if statements to use for change our backgrouns every 10 seconds 
+
+       if (frameCount % backgroundChangeTime == 0) 
+       {
+          currentBackground++;
+          if(currentBackground >3) currentBackground =1; 
+
+
+       }
+// DRAW BACKGROUNDs 
+
+       if(currentBackground == 1)
+       DrawTexture(background1,0,0, WHITE); 
+      
+       else if(currentBackground ==2)
+
+       DrawTexture (background2,0,0, WHITE);
+
+       else if (currentBackground == 3)
+       DrawTexture (background3, 0,0,  WHITE);
+
+       frameCount++;
+
+
+    }
 
     
   
@@ -324,8 +350,8 @@ const int screenWidth = 600;
      // using  layers to place code in the right place (back to front) 
       //when the window is activated (press run) it should show a moving background on the screen. 
 
-      DrawTexture(background1, 0,0,  WHITE);
-      
+  
+    
     
      // when drawing the ball, will now draw form the ball struct. 
      ball.Draw();
@@ -358,7 +384,14 @@ const int screenWidth = 600;
 
       //De-Initialization  
     //  unload background texture 
+
       UnloadTexture(background1);
+      UnloadTexture (background2);
+      UnloadTexture(background3);
+
+
+// unloadsound
+
       UnloadSound(sound);
       UnloadSound(winner);
 
@@ -366,6 +399,9 @@ const int screenWidth = 600;
   CloseWindow();
   
   return 0; 
-  
-}
+ 
+  {
 
+    
+  }
+  
